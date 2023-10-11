@@ -20,11 +20,13 @@ struct CounterFeature: Reducer {
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
         switch action {
         case .decrementButtonTapped:
-            state.counter -= 0
+            state.counter -= 1
             return .none
         case .incrementButtonTapped:
-            state.counter +=  0
+            state.counter +=  1
             return .none
         }
     }
 }
+
+extension CounterFeature.State: Equatable {}
