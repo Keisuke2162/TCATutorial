@@ -16,6 +16,9 @@
 		672CB5402AD6E986005048D5 /* TCATutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672CB53F2AD6E986005048D5 /* TCATutorialTests.swift */; };
 		672CB54A2AD6E986005048D5 /* TCATutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672CB5492AD6E986005048D5 /* TCATutorialUITests.swift */; };
 		672CB54C2AD6E986005048D5 /* TCATutorialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672CB54B2AD6E986005048D5 /* TCATutorialUITestsLaunchTests.swift */; };
+		672CB55A2AD6EB5B005048D5 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 672CB5592AD6EB5B005048D5 /* ComposableArchitecture */; };
+		672CB55C2AD6EB78005048D5 /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672CB55B2AD6EB78005048D5 /* CounterFeature.swift */; };
+		672CB55E2AD6F304005048D5 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672CB55D2AD6F304005048D5 /* CounterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,8 @@
 		672CB5452AD6E986005048D5 /* TCATutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCATutorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		672CB5492AD6E986005048D5 /* TCATutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCATutorialUITests.swift; sourceTree = "<group>"; };
 		672CB54B2AD6E986005048D5 /* TCATutorialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCATutorialUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		672CB55B2AD6EB78005048D5 /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
+		672CB55D2AD6F304005048D5 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				672CB55A2AD6EB5B005048D5 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +110,8 @@
 				672CB5322AD6E986005048D5 /* Persistence.swift */,
 				672CB5342AD6E986005048D5 /* TCATutorial.xcdatamodeld */,
 				672CB52F2AD6E986005048D5 /* Preview Content */,
+				672CB55B2AD6EB78005048D5 /* CounterFeature.swift */,
+				672CB55D2AD6F304005048D5 /* CounterView.swift */,
 			);
 			path = TCATutorial;
 			sourceTree = "<group>";
@@ -149,6 +157,9 @@
 			dependencies = (
 			);
 			name = TCATutorial;
+			packageProductDependencies = (
+				672CB5592AD6EB5B005048D5 /* ComposableArchitecture */,
+			);
 			productName = TCATutorial;
 			productReference = 672CB5262AD6E984005048D5 /* TCATutorial.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 672CB51D2AD6E984005048D5;
+			packageReferences = (
+				672CB5582AD6EB5B005048D5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 672CB5272AD6E984005048D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,7 +280,9 @@
 				672CB5362AD6E986005048D5 /* TCATutorial.xcdatamodeld in Sources */,
 				672CB5332AD6E986005048D5 /* Persistence.swift in Sources */,
 				672CB52C2AD6E984005048D5 /* ContentView.swift in Sources */,
+				672CB55C2AD6EB78005048D5 /* CounterFeature.swift in Sources */,
 				672CB52A2AD6E984005048D5 /* TCATutorialApp.swift in Sources */,
+				672CB55E2AD6F304005048D5 /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +607,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		672CB5582AD6EB5B005048D5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		672CB5592AD6EB5B005048D5 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 672CB5582AD6EB5B005048D5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		672CB5342AD6E986005048D5 /* TCATutorial.xcdatamodeld */ = {
