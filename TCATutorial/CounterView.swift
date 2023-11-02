@@ -51,6 +51,14 @@ struct CounterView: View {
                         .multilineTextAlignment(.center)
                         .padding()
                 }
+                
+                Button(viewStore.isTimerRunning ? "Stop Timer" : "Start Timer") {
+                    viewStore.send(.toggleTimerButtonTapped)
+                }
+                .font(.largeTitle)
+                .padding()
+                .background(Color.black.opacity(0.1))
+                .cornerRadius(10)
             }
         }
     }
