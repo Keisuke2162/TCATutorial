@@ -19,6 +19,8 @@
 		672CB55A2AD6EB5B005048D5 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 672CB5592AD6EB5B005048D5 /* ComposableArchitecture */; };
 		672CB55C2AD6EB78005048D5 /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672CB55B2AD6EB78005048D5 /* CounterFeature.swift */; };
 		672CB55E2AD6F304005048D5 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672CB55D2AD6F304005048D5 /* CounterView.swift */; };
+		67E725C22B4DB3CE00F8EE55 /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E725C12B4DB3CE00F8EE55 /* NumberFactClient.swift */; };
+		67E725C42B4DBEBC00F8EE55 /* CounterFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5A35B2AF39FF700F10445 /* CounterFeatureTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		672CB55B2AD6EB78005048D5 /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
 		672CB55D2AD6F304005048D5 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		67E5A35A2AF39DCE00F10445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		67E5A35B2AF39FF700F10445 /* CounterFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeatureTests.swift; sourceTree = "<group>"; };
+		67E725C12B4DB3CE00F8EE55 /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				672CB52F2AD6E986005048D5 /* Preview Content */,
 				672CB55B2AD6EB78005048D5 /* CounterFeature.swift */,
 				672CB55D2AD6F304005048D5 /* CounterView.swift */,
+				67E725C12B4DB3CE00F8EE55 /* NumberFactClient.swift */,
 			);
 			path = TCATutorial;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 		672CB53E2AD6E986005048D5 /* TCATutorialTests */ = {
 			isa = PBXGroup;
 			children = (
+				67E5A35B2AF39FF700F10445 /* CounterFeatureTests.swift */,
 				672CB53F2AD6E986005048D5 /* TCATutorialTests.swift */,
 			);
 			path = TCATutorialTests;
@@ -285,6 +291,7 @@
 				672CB55C2AD6EB78005048D5 /* CounterFeature.swift in Sources */,
 				672CB52A2AD6E984005048D5 /* TCATutorialApp.swift in Sources */,
 				672CB55E2AD6F304005048D5 /* CounterView.swift in Sources */,
+				67E725C22B4DB3CE00F8EE55 /* NumberFactClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				672CB5402AD6E986005048D5 /* TCATutorialTests.swift in Sources */,
+				67E725C42B4DBEBC00F8EE55 /* CounterFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,8 +625,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				kind = exactVersion;
+				version = 1.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
