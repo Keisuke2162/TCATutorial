@@ -17,6 +17,7 @@ struct CounterFeature: Reducer {
         var isTimerRunning = false
     }
 
+    @CasePathable
     enum Action {
         case decrementButtonTapped                  // カウンターをマイナス
         case incrementButtonTapped                  // カウンターをプラス
