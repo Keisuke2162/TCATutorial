@@ -18,17 +18,14 @@ struct Contact: Equatable, Identifiable {
 @Reducer
 struct ContactsFeature {
     struct State: Equatable {
-        @PresentationState var addContact: AddContactFeature.State?     // 連絡先追加画面のState
-        @PresentationState var alert: AlertState<Action.Alert>?         // 削除確認ダイアログ（alert）のState
         var contacts: IdentifiedArrayOf<Contact> = []
+        @PresentationState var destination: Destination.State?
     }
 
     enum Action {
         case addButtonTaped
-        case addContact(PresentationAction<AddContactFeature.Action>)   // 連絡先追加画面のAction
-        case alert(PresentationAction<Alert>)
         case deleteButtonTapped(id: Contact.ID)
-
+        case destination(PresentationAction<Destination.Action>)
         // アラート上で発生するアクション
         enum Alert: Equatable {
             case confirmDeletion(id: Contact.ID)
@@ -38,33 +35,35 @@ struct ContactsFeature {
         Reduce { state, action in
             switch action {
             case .addButtonTaped:
-                state.addContact = AddContactFeature.State(contact: Contact(id: UUID(), name: ""))  // Addボタンタップ時に連絡先追加画面のStateを作る
+                state.destination = .addContact(AddContactFeature.State(contact: Contact(id: UUID(), name: "")))    //　連絡先追加ViewのReducerを向いたDestination
                 return .none
-            case let .addContact(.presented(.delegate(.saveContact(contact)))):
+            
+            // 連絡先追加画面のSaveボタンタップ
+            case let .destination(.presented(.addContact(.delegate(.saveContact(contact))))):
                 state.contacts.append(contact)
                 return .none
-            case .addContact:
-                return .none
-            case let .deleteButtonTapped(id):
-                state.alert = AlertState {
-                    TextState("Are you sure?")
-                } actions: {
-                    ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
-                        TextState("Delete")
-                    }
-                }
-                return .none
-                
-            case let .alert(.presented(.confirmDeletion(id))):
+            // 削除確認アラートの「削除」ボタンタップ
+            case let .destination(.presented(.alert(.confirmDeletion(id)))):
                 state.contacts.remove(id: id)
                 return .none
-            case .alert:
+            case .destination:
+                return .none
+
+            case let .deleteButtonTapped(id):
+                state.destination = .alert(
+                    AlertState {
+                        TextState("Are you sure?")
+                    } actions: {
+                        ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
+                            TextState("Delete")
+                        }
+                    }
+                )
                 return .none
             }
         }
-        .ifLet(\.$addContact, action: \.addContact) {   // ifLetでReducerを統合
-            AddContactFeature()
+        .ifLet(\.$destination, action: \.destination) {   // ifLetでReducerを統合
+            Destination()
         }
-        .ifLet(\.$alert, action: \.alert)               // ifLetでアラートのロジックを統合
     }
 }
