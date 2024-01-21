@@ -28,17 +28,3 @@ struct AppView: View {
         })
     )
 }
-
-/*
- struct CounterView_Previews: PreviewProvider {
-     static var previews: some View {
-         CounterView(
-             store: Store(initialState: CounterFeature.State(), reducer: {
-                 CounterFeature()
-             })
-         )
-     }
- }
-
-
- */
