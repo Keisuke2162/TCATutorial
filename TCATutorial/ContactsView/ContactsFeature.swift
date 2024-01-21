@@ -18,7 +18,7 @@ struct Contact: Equatable, Identifiable {
 @Reducer
 struct ContactsFeature {
 
-    struct State {
+    struct State: Equatable {
         var contacts: IdentifiedArrayOf<Contact> = []
     }
 
@@ -27,7 +27,11 @@ struct ContactsFeature {
     }
     var body: some ReducerOf<Self> {
         Reduce { state, action in
-            
+            switch action {
+            case .addButtonTaped:
+                // TODO: Handle action
+                return .none
+            }
         }
     }
 }
