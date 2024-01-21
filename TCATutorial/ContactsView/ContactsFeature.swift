@@ -32,13 +32,20 @@ struct ContactsFeature {
             case .addButtonTaped:
                 state.addContact = AddContactFeature.State(contact: Contact(id: UUID(), name: ""))  // Addボタンタップ時に連絡先追加画面のStateを作る
                 return .none
-            case .addContact(.presented(.cancelButtonTapped)):
-                state.addContact = nil                                  // 連絡先追加画面でキャンセルした時はaddContactStateをnil
-                return .none
-            case .addContact(.presented(.saveButtonTapped)):
-                guard let contact = state.addContact?.contact else { return .none }
+//            case .addContact(.presented(.cancelButtonTapped)):
+//                state.addContact = nil                                  // 連絡先追加画面でキャンセルした時はaddContactStateをnil
+//                return .none
+//            case .addContact(.presented(.saveButtonTapped)):
+//                guard let contact = state.addContact?.contact else { return .none }
+//                state.contacts.append(contact)
+//                state.addContact = nil
+//                return .none
+//            case .addContact(.presented(.delegate(.cancel))):         // 子ReducerにDismissEffectを実装したので明示的にキャンセルを行う必要は無くなった
+//                state.addContact = nil
+//                return .none
+            case let .addContact(.presented(.delegate(.saveContact(contact)))):
                 state.contacts.append(contact)
-                state.addContact = nil
+//                state.addContact = nil                                // 子ReducerのDismissEffectがやってくれる
                 return .none
             case .addContact:
                 return .none
