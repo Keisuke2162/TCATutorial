@@ -22,6 +22,7 @@ struct ContactsFeature {
         @PresentationState var destination: Destination.State?
     }
 
+    @CasePathable
     enum Action {
         case addButtonTaped
         case deleteButtonTapped(id: Contact.ID)
@@ -31,11 +32,12 @@ struct ContactsFeature {
             case confirmDeletion(id: Contact.ID)
         }
     }
+    @Dependency(\.uuid) var uuid
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .addButtonTaped:
-                state.destination = .addContact(AddContactFeature.State(contact: Contact(id: UUID(), name: "")))    //　連絡先追加ViewのReducerを向いたDestination
+                state.destination = .addContact(AddContactFeature.State(contact: Contact(id: self.uuid(), name: "")))    //　連絡先追加ViewのReducerを向いたDestination
                 return .none
             
             // 連絡先追加画面のSaveボタンタップ

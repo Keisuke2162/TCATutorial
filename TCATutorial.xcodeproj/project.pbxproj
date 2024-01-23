@@ -27,6 +27,7 @@
 		67C5D32B2B5D0D2800AAC2CB /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5D32A2B5D0D2800AAC2CB /* AddContactFeature.swift */; };
 		67C5D32D2B5D160500AAC2CB /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5D32C2B5D160500AAC2CB /* AddContactView.swift */; };
 		67C5D3312B5D3FF400AAC2CB /* ContactsFeature+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5D3302B5D3FF400AAC2CB /* ContactsFeature+Extension.swift */; };
+		67C5D3332B5D9DA000AAC2CB /* ContactsFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5D3322B5D9DA000AAC2CB /* ContactsFeatureTests.swift */; };
 		67E725C22B4DB3CE00F8EE55 /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E725C12B4DB3CE00F8EE55 /* NumberFactClient.swift */; };
 		67E725C42B4DBEBC00F8EE55 /* CounterFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5A35B2AF39FF700F10445 /* CounterFeatureTests.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		67C5D32A2B5D0D2800AAC2CB /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
 		67C5D32C2B5D160500AAC2CB /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		67C5D3302B5D3FF400AAC2CB /* ContactsFeature+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactsFeature+Extension.swift"; sourceTree = "<group>"; };
+		67C5D3322B5D9DA000AAC2CB /* ContactsFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeatureTests.swift; sourceTree = "<group>"; };
 		67E5A35A2AF39DCE00F10445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		67E5A35B2AF39FF700F10445 /* CounterFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeatureTests.swift; sourceTree = "<group>"; };
 		67E725C12B4DB3CE00F8EE55 /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				67E5A35B2AF39FF700F10445 /* CounterFeatureTests.swift */,
 				672CB53F2AD6E986005048D5 /* TCATutorialTests.swift */,
 				6763C0CD2B51857D00E9C382 /* AppFeatureTests.swift */,
+				67C5D3322B5D9DA000AAC2CB /* ContactsFeatureTests.swift */,
 			);
 			path = TCATutorialTests;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				672CB5402AD6E986005048D5 /* TCATutorialTests.swift in Sources */,
 				67E725C42B4DBEBC00F8EE55 /* CounterFeatureTests.swift in Sources */,
 				6763C0CE2B51857D00E9C382 /* AppFeatureTests.swift in Sources */,
+				67C5D3332B5D9DA000AAC2CB /* ContactsFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
