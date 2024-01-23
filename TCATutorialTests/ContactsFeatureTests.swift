@@ -44,8 +44,7 @@ final class ContactsFeatureTests: XCTestCase {
             $0.destination = nil
         }
     }
-    
-    
+
     /// Test Section2
     func testAddFlow_NonExhaustive() async {
         let store = TestStore(initialState: ContactsFeature.State()) {
@@ -63,6 +62,27 @@ final class ContactsFeatureTests: XCTestCase {
         store.assert { state in
             state.contacts = [Contact(id: UUID(0), name: "San")]
             state.destination = nil
+        }
+    }
+
+    /// Test Section3
+    func testDeleteContact() async {
+        let store = TestStore(initialState: ContactsFeature.State(
+            contacts: [
+                Contact(id: UUID(0), name: "Kei"),
+                Contact(id: UUID(1), name: "San")
+            ]
+        )) {
+            ContactsFeature()
+        }
+        
+        await store.send(.deleteButtonTapped(id: UUID(0))) {
+            $0.destination = .alert(.deleteConfirmation(id: UUID(0)))
+        }
+
+        await store.send(.destination(.presented(.alert(.confirmDeletion(id: UUID(0)))))) {
+            $0.contacts.remove(id: UUID(0))
+            $0.destination = nil
         }
     }
 }
