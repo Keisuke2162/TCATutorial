@@ -11,6 +11,7 @@ import XCTest
 
 @MainActor
 final class ContactsFeatureTests: XCTestCase {
+    /// Test Section1
     func testAddFlow() async {
         // Featureの初期状態、テスト対象のReducerでstoreを構築
         let store = TestStore(initialState: ContactsFeature.State()) {
@@ -41,6 +42,27 @@ final class ContactsFeatureTests: XCTestCase {
         
         await store.receive(\.destination.dismiss) {
             $0.destination = nil
+        }
+    }
+    
+    
+    /// Test Section2
+    func testAddFlow_NonExhaustive() async {
+        let store = TestStore(initialState: ContactsFeature.State()) {
+            ContactsFeature()
+        } withDependencies: {
+            $0.uuid = .incrementing
+        }
+        store.exhaustivity = .off
+        
+        await store.send(.addButtonTaped)
+        await store.send(.destination(.presented(.addContact(.setName("San")))))
+        await store.send(.destination(.presented(.addContact(.saveButtonTapped))))
+        await store.skipReceivedActions()
+        
+        store.assert { state in
+            state.contacts = [Contact(id: UUID(0), name: "San")]
+            state.destination = nil
         }
     }
 }
