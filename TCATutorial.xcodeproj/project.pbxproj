@@ -23,6 +23,8 @@
 		6763C0CC2B51837900E9C382 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763C0CB2B51837900E9C382 /* AppFeature.swift */; };
 		6763C0CE2B51857D00E9C382 /* AppFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763C0CD2B51857D00E9C382 /* AppFeatureTests.swift */; };
 		6763C0D32B5190B800E9C382 /* ContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6763C0D22B5190B800E9C382 /* ContactsFeature.swift */; };
+		678D92F82B6814570030EC1F /* ContactDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D92F72B6814570030EC1F /* ContactDetailFeature.swift */; };
+		678D92FC2B68168B0030EC1F /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D92FB2B68168B0030EC1F /* ContactDetailView.swift */; };
 		67C5D3292B5CFA2400AAC2CB /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5D3282B5CFA2400AAC2CB /* ContactsView.swift */; };
 		67C5D32B2B5D0D2800AAC2CB /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5D32A2B5D0D2800AAC2CB /* AddContactFeature.swift */; };
 		67C5D32D2B5D160500AAC2CB /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5D32C2B5D160500AAC2CB /* AddContactView.swift */; };
@@ -68,6 +70,8 @@
 		6763C0CB2B51837900E9C382 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		6763C0CD2B51857D00E9C382 /* AppFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureTests.swift; sourceTree = "<group>"; };
 		6763C0D22B5190B800E9C382 /* ContactsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeature.swift; sourceTree = "<group>"; };
+		678D92F72B6814570030EC1F /* ContactDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailFeature.swift; sourceTree = "<group>"; };
+		678D92FB2B68168B0030EC1F /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		67C5D3282B5CFA2400AAC2CB /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		67C5D32A2B5D0D2800AAC2CB /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
 		67C5D32C2B5D160500AAC2CB /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				6763C0CF2B51906700E9C382 /* CounterView */,
 				6763C0D02B51907400E9C382 /* AppView */,
 				6763C0D12B51908300E9C382 /* ContactsView */,
+				678D92F62B601F4C0030EC1F /* ContactDetailView */,
 			);
 			path = TCATutorial;
 			sourceTree = "<group>";
@@ -198,6 +203,15 @@
 				67C5D3302B5D3FF400AAC2CB /* ContactsFeature+Extension.swift */,
 			);
 			path = ContactsView;
+			sourceTree = "<group>";
+		};
+		678D92F62B601F4C0030EC1F /* ContactDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				678D92F72B6814570030EC1F /* ContactDetailFeature.swift */,
+				678D92FB2B68168B0030EC1F /* ContactDetailView.swift */,
+			);
+			path = ContactDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,7 +360,9 @@
 				672CB52A2AD6E984005048D5 /* TCATutorialApp.swift in Sources */,
 				67C5D32B2B5D0D2800AAC2CB /* AddContactFeature.swift in Sources */,
 				672CB55E2AD6F304005048D5 /* CounterView.swift in Sources */,
+				678D92F82B6814570030EC1F /* ContactDetailFeature.swift in Sources */,
 				67E725C22B4DB3CE00F8EE55 /* NumberFactClient.swift in Sources */,
+				678D92FC2B68168B0030EC1F /* ContactDetailView.swift in Sources */,
 				67C5D3292B5CFA2400AAC2CB /* ContactsView.swift in Sources */,
 				6763C0D32B5190B800E9C382 /* ContactsFeature.swift in Sources */,
 				67C5D32D2B5D160500AAC2CB /* AddContactView.swift in Sources */,
@@ -685,8 +701,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				kind = exactVersion;
-				version = 1.6.0;
+				branch = "observation-beta";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
